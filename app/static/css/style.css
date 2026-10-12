@@ -154,12 +154,12 @@ tr:last-child td { border-bottom: none; }
 .feat h3 { font-size: 13px; font-weight: 500; margin-bottom: 6px; color: var(--blue); }
 .feat p { font-size: 12px; color: var(--text-2); }
 
-/* 打印：只输出完整报告 */
+/* 打印：只输出完整报告（#print-report 位于 #app 内，须隐藏 #app 的其它子节点） */
 #print-report { display: none; }
 
 @media print {
   body { background: #fff; }
-  body > *:not(#print-report) { display: none !important; }
+  #app > *:not(#print-report) { display: none !important; }
   #print-report { display: block !important; padding: 20px; }
   #print-report h1 { font-size: 20px; margin-bottom: 12px; }
   #print-report h2 { font-size: 15px; margin: 18px 0 8px; }

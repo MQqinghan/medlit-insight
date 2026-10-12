@@ -42,6 +42,13 @@
    - 作者有 `CollectiveName`（课题组署名）→ 不能假定都有 LastName；
    - `PubDate` 三种形态（Year+Month / MedlineDate"2023 Jan-Feb" / 仅 epub ArticleDate）→ 逐级回退取年份。
 
+5. **打印 CSS 选择器作用域错误（PDF 导出会得到空白页）**
+   AI 初版写 `body > *:not(#print-report){display:none}` 想"只打印报告区"，
+   但 `#print-report` 在 `#app` 内部，`#app` 作为 body 的直接子节点被整体隐藏，打印区陪葬。
+   修法：改为 `#app > *:not(#print-report)`。
+   *教训：AI 写"只显示某区域"的 CSS 时不检查 DOM 嵌套层级；打印/导出这类"看一眼就能发现"的
+   路径，必须真机走一次，不能只 review 代码。*
+
 ## 三、设计取舍记录（为什么这么做，而不是那么做）
 
 | 决策 | 选择 | 放弃的方案及理由 |
