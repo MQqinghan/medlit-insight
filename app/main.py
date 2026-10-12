@@ -124,7 +124,8 @@ async def analyze_stream(q: str, years: int = 0, force: int = 0):
                            "start_year": start_year, "end_year": cy, "top_n": top_n},
                 "stats": stats,
                 "wordcloud": wordcloud,
-                "review": {"markdown": review_md, "source": source},
+                "review": {"markdown": review_md, "source": source,
+                           "model": config.get("LLM_MODEL") if source == "llm" else None},
                 "meta": {
                     "journal_db_version": _jdb.version,
                     "elapsed_ms": int((time.monotonic() - t0) * 1000),

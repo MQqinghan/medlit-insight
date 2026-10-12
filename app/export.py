@@ -12,8 +12,16 @@ except ImportError:  # pragma: no cover
 
 DISCLAIMER = (
     "数据来源：PubMed E-utilities（检索时间 {ts}）。期刊影响因子与分区为本地静态示例库数据"
-    "（版本 {ver}），非实时权威口径；综述由 LLM 基于检索摘要生成，仅供参考。"
+    "（版本 {ver}），非实时权威口径；{llm}"
 )
+
+
+def _llm_note(result):
+    """按综述实际来源生成声明：LLM 生成时标注模型名，兜底时明示模板生成。"""
+    review = result.get("review", {})
+    if review.get("source") == "llm":
+        return f"综述由 {review.get('model') or 'LLM'} 基于检索摘要生成，仅供参考。"
+    return "综述为统计模板自动生成（本次未调用 LLM），仅供参考。"
 
 
 def _fmt_pct(x):
@@ -52,7 +60,7 @@ def build_markdown(result):
         lines.append(
             f"| {a['rank']} | {title} | {a['journal']} | {a['year']} | {a['if']} | {a['zone'] or '—'} |"
         )
-    lines += ["", DISCLAIMER.format(ts=ts, ver=ver), ""]
+    lines += ["", DISCLAIMER.format(ts=ts, ver=ver, llm=_llm_note(result)), ""]
     return "\n".join(lines)
 
 
@@ -99,7 +107,7 @@ def build_docx(result):
         row[5].text = a["zone"] or "—"
 
     note = doc.add_paragraph()
-    run = note.add_run(DISCLAIMER.format(ts=ts, ver=ver))
+    run = note.add_run(DISCLAIMER.format(ts=ts, ver=ver, llm=_llm_note(result)))
     run.font.size = Pt(9)
     run.font.color.rgb = RGBColor(0x80, 0x80, 0x80)
     buf = BytesIO()

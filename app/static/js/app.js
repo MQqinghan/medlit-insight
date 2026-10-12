@@ -34,6 +34,12 @@ createApp({
       if (!this.result) return [];
       return this.result.review.markdown.split("\n").map((s) => s.trim()).filter(Boolean);
     },
+    reviewSourceLabel() {
+      if (!this.result) return "";
+      const r = this.result.review;
+      if (r.source === "llm") return (r.model || "LLM") + " 生成";
+      return "统计模板生成（LLM 不可用）";
+    },
     zoneItems() {
       if (!this.result) return [];
       const d = this.result.stats.zone_dist;
@@ -266,7 +272,7 @@ createApp({
           <thead><tr><th>#</th><th>标题</th><th>期刊</th><th>年份</th><th>IF</th><th>分区</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
-        <p style="margin-top:14px;color:#888">数据来源：PubMed E-utilities｜期刊 IF / 分区为本地静态示例库（${esc(r.meta.journal_db_version)}）｜综述由 LLM 生成，仅供参考</p>`;
+        <p style="margin-top:14px;color:#888">数据来源：PubMed E-utilities｜期刊 IF / 分区为本地静态示例库（${esc(r.meta.journal_db_version)}）｜${r.review.source === "llm" ? "综述由 " + esc(r.review.model || "LLM") + " 生成，仅供参考" : "综述为统计模板自动生成，仅供参考"}</p>`;
     },
   },
   mounted() {

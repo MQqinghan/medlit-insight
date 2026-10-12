@@ -64,8 +64,13 @@ medlit-insight/
 │   ├── build_journals.py     # 期刊库生成脚本（加期刊只改这里）
 │   └── journals.json         # 183 个常见医学期刊静态指标库
 └── scripts/
-    └── smoke_test.py         # 端到端冒烟测试
+    ├── smoke_test.py         # 端到端冒烟测试（22 项断言）
+    ├── check_llm.py          # LLM key 体检：遍历候选端点，输出可用端点+模型清单+真实对话
+    └── check_pubmed_key.py   # PubMed key 体检：实测 esearch 是否被接受
 ```
+
+> Key 验证提示：不要把 key 直接写进命令行发请求（本沙箱会脱敏命令行中的密钥，造成 401 假象），
+> 一律先填入 `config.local.py`，再用上面两个 check 脚本从配置读取验证。
 
 ## 数据口径与免责声明（重要）
 

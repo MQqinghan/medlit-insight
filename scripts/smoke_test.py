@@ -86,7 +86,10 @@ def main():
                 check("top100 list", 0 < len(s["top_n"]) <= 100, f"{len(s['top_n'])} 条")
                 t1 = s["top_n"][0]
                 check("top1 has if/journal", t1.get("if") is not None and bool(t1.get("journal")), f'{t1.get("journal")} IF {t1.get("if")}')
-                check("review fallback", result["review"]["source"] == "fallback", "沙箱无 LLM key，应走兜底")
+                if h.get("llm_key"):
+                    check("review llm", result["review"]["source"] == "llm", "LLM key 已配置，应走真实生成")
+                else:
+                    check("review fallback", result["review"]["source"] == "fallback", "无 LLM key，应走模板兜底")
                 check("review length", 300 <= len(result["review"]["markdown"]) <= 1200,
                       f'{len(result["review"]["markdown"])} 字')
 
