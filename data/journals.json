@@ -1,0 +1,1657 @@
+{
+ "meta": {
+  "version": "v2026.10",
+  "count": 183,
+  "note": "静态示例库：IF 为约 2024 JCR 公开口径近似整理值，cas 为中科院大类分区，q 为 JCR 分区；生产环境请替换为权威数据源。",
+  "generated_by": "data/build_journals.py"
+ },
+ "journals": [
+  {
+   "name": "The New England Journal of Medicine",
+   "abbrev": "N Engl J Med",
+   "issn": "0028-4793",
+   "if": 96.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "The Lancet",
+   "abbrev": "Lancet",
+   "issn": "0140-6736",
+   "if": 98.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "JAMA",
+   "abbrev": "JAMA",
+   "issn": "0098-7484",
+   "if": 63.1,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "The BMJ",
+   "abbrev": "BMJ",
+   "issn": "0959-8138",
+   "if": 93.6,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "Nature Medicine",
+   "abbrev": "Nat Med",
+   "issn": "1078-8956",
+   "if": 58.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "Annals of Internal Medicine",
+   "abbrev": "Ann Intern Med",
+   "issn": "0003-4819",
+   "if": 39.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "PLoS Medicine",
+   "abbrev": "PLoS Med",
+   "issn": "1549-1277",
+   "if": 10.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "BMC Medicine",
+   "abbrev": "BMC Med",
+   "issn": "1741-7015",
+   "if": 8.3,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "综合医学"
+  },
+  {
+   "name": "CA: A Cancer Journal for Clinicians",
+   "abbrev": "CA Cancer J Clin",
+   "issn": "0007-9235",
+   "if": 503.1,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Journal of Clinical Oncology",
+   "abbrev": "J Clin Oncol",
+   "issn": "0732-183X",
+   "if": 42.1,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Lancet Oncology",
+   "abbrev": "Lancet Oncol",
+   "issn": "1470-2045",
+   "if": 41.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Nature Reviews Cancer",
+   "abbrev": "Nat Rev Cancer",
+   "issn": "1474-175X",
+   "if": 72.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Cancer Cell",
+   "abbrev": "Cancer Cell",
+   "issn": "1535-6108",
+   "if": 48.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Annals of Oncology",
+   "abbrev": "Ann Oncol",
+   "issn": "0923-7534",
+   "if": 50.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "JAMA Oncology",
+   "abbrev": "JAMA Oncol",
+   "issn": "2374-2437",
+   "if": 28.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Clinical Cancer Research",
+   "abbrev": "Clin Cancer Res",
+   "issn": "1078-0432",
+   "if": 10.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Cancer Research",
+   "abbrev": "Cancer Res",
+   "issn": "0008-5472",
+   "if": 12.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "British Journal of Cancer",
+   "abbrev": "Br J Cancer",
+   "issn": "0007-0920",
+   "if": 6.4,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "European Journal of Cancer",
+   "abbrev": "Eur J Cancer",
+   "issn": "0959-8049",
+   "if": 5.4,
+   "cas": 2,
+   "q": "Q2",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Oncogene",
+   "abbrev": "Oncogene",
+   "issn": "0950-9232",
+   "if": 6.9,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Seminars in Cancer Biology",
+   "abbrev": "Semin Cancer Biol",
+   "issn": "1044-579X",
+   "if": 12.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Cancer",
+   "abbrev": "Cancer",
+   "issn": "0008-543X",
+   "if": 6.1,
+   "cas": 2,
+   "q": "Q2",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Frontiers in Oncology",
+   "abbrev": "Front Oncol",
+   "issn": "2234-943X",
+   "if": 3.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "肿瘤"
+  },
+  {
+   "name": "Circulation",
+   "abbrev": "Circulation",
+   "issn": "0009-7322",
+   "if": 37.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "European Heart Journal",
+   "abbrev": "Eur Heart J",
+   "issn": "0195-668X",
+   "if": 37.6,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "Journal of the American College of Cardiology",
+   "abbrev": "J Am Coll Cardiol",
+   "issn": "0735-1097",
+   "if": 26.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "JAMA Cardiology",
+   "abbrev": "JAMA Cardiol",
+   "issn": "2380-6583",
+   "if": 27.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "Circulation Research",
+   "abbrev": "Circ Res",
+   "issn": "0009-7330",
+   "if": 20.1,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "European Journal of Heart Failure",
+   "abbrev": "Eur J Heart Fail",
+   "issn": "1388-9842",
+   "if": 18.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "Stroke",
+   "abbrev": "Stroke",
+   "issn": "0039-2499",
+   "if": 9.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "Hypertension",
+   "abbrev": "Hypertension",
+   "issn": "0194-911X",
+   "if": 7.3,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "心血管"
+  },
+  {
+   "name": "Heart",
+   "abbrev": "Heart",
+   "issn": "1355-6037",
+   "if": 5.7,
+   "cas": 2,
+   "q": "Q2",
+   "cat": "心血管"
+  },
+  {
+   "name": "Atherosclerosis",
+   "abbrev": "Atherosclerosis",
+   "issn": "0021-9150",
+   "if": 4.9,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "心血管"
+  },
+  {
+   "name": "International Journal of Cardiology",
+   "abbrev": "Int J Cardiol",
+   "issn": "0167-5273",
+   "if": 3.2,
+   "cas": 3,
+   "q": "Q3",
+   "cat": "心血管"
+  },
+  {
+   "name": "Lancet Neurology",
+   "abbrev": "Lancet Neurol",
+   "issn": "1474-4422",
+   "if": 48.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Brain",
+   "abbrev": "Brain",
+   "issn": "0006-8950",
+   "if": 14.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Annals of Neurology",
+   "abbrev": "Ann Neurol",
+   "issn": "0364-5134",
+   "if": 11.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "JAMA Neurology",
+   "abbrev": "JAMA Neurol",
+   "issn": "2168-6149",
+   "if": 26.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Neurology",
+   "abbrev": "Neurology",
+   "issn": "0028-3878",
+   "if": 11.3,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Nature Neuroscience",
+   "abbrev": "Nat Neurosci",
+   "issn": "1097-6256",
+   "if": 21.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Acta Neuropathologica",
+   "abbrev": "Acta Neuropathol",
+   "issn": "0001-6322",
+   "if": 13.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Alzheimer's & Dementia",
+   "abbrev": "Alzheimers Dement",
+   "issn": "1552-5260",
+   "if": 14.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Brain, Behavior, and Immunity",
+   "abbrev": "Brain Behav Immun",
+   "issn": "0889-1591",
+   "if": 8.8,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "神经"
+  },
+  {
+   "name": "Diabetes Care",
+   "abbrev": "Diabetes Care",
+   "issn": "0149-5992",
+   "if": 14.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "Diabetologia",
+   "abbrev": "Diabetologia",
+   "issn": "0012-186X",
+   "if": 8.3,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "Journal of Clinical Endocrinology & Metabolism",
+   "abbrev": "J Clin Endocrinol Metab",
+   "issn": "0021-972X",
+   "if": 5.5,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "Diabetes",
+   "abbrev": "Diabetes",
+   "issn": "0012-1797",
+   "if": 6.5,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "Obesity",
+   "abbrev": "Obesity",
+   "issn": "1930-7381",
+   "if": 4.7,
+   "cas": 2,
+   "q": "Q2",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "Metabolism",
+   "abbrev": "Metabolism",
+   "issn": "0026-0495",
+   "if": 9.8,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "Thyroid",
+   "abbrev": "Thyroid",
+   "issn": "1050-7256",
+   "if": 5.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "Endocrine Reviews",
+   "abbrev": "Endocr Rev",
+   "issn": "0163-769X",
+   "if": 22.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "内分泌代谢"
+  },
+  {
+   "name": "European Respiratory Journal",
+   "abbrev": "Eur Respir J",
+   "issn": "0903-1936",
+   "if": 17.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "呼吸"
+  },
+  {
+   "name": "American Journal of Respiratory and Critical Care Medicine",
+   "abbrev": "Am J Respir Crit Care Med",
+   "issn": "1073-449X",
+   "if": 21.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "呼吸"
+  },
+  {
+   "name": "Thorax",
+   "abbrev": "Thorax",
+   "issn": "0040-6376",
+   "if": 9.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "呼吸"
+  },
+  {
+   "name": "Chest",
+   "abbrev": "Chest",
+   "issn": "0012-3692",
+   "if": 9.8,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "呼吸"
+  },
+  {
+   "name": "Respiratory Research",
+   "abbrev": "Respir Res",
+   "issn": "1465-9921",
+   "if": 6.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "呼吸"
+  },
+  {
+   "name": "European Respiratory Review",
+   "abbrev": "Eur Respir Rev",
+   "issn": "0905-9180",
+   "if": 10.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "呼吸"
+  },
+  {
+   "name": "Gastroenterology",
+   "abbrev": "Gastroenterology",
+   "issn": "0016-5085",
+   "if": 25.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "消化"
+  },
+  {
+   "name": "Gut",
+   "abbrev": "Gut",
+   "issn": "0017-5749",
+   "if": 23.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "消化"
+  },
+  {
+   "name": "Journal of Hepatology",
+   "abbrev": "J Hepatol",
+   "issn": "0168-8278",
+   "if": 26.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "消化"
+  },
+  {
+   "name": "Hepatology",
+   "abbrev": "Hepatology",
+   "issn": "0270-9139",
+   "if": 12.9,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "消化"
+  },
+  {
+   "name": "American Journal of Gastroenterology",
+   "abbrev": "Am J Gastroenterol",
+   "issn": "0002-9270",
+   "if": 8.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "消化"
+  },
+  {
+   "name": "Clinical Gastroenterology and Hepatology",
+   "abbrev": "Clin Gastroenterol Hepatol",
+   "issn": "1542-3565",
+   "if": 11.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "消化"
+  },
+  {
+   "name": "Inflammatory Bowel Diseases",
+   "abbrev": "Inflamm Bowel Dis",
+   "issn": "1078-0998",
+   "if": 4.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "消化"
+  },
+  {
+   "name": "Journal of the American Society of Nephrology",
+   "abbrev": "J Am Soc Nephrol",
+   "issn": "1046-6673",
+   "if": 10.3,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肾脏"
+  },
+  {
+   "name": "Kidney International",
+   "abbrev": "Kidney Int",
+   "issn": "0085-2538",
+   "if": 14.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "肾脏"
+  },
+  {
+   "name": "Clinical Journal of the American Society of Nephrology",
+   "abbrev": "Clin J Am Soc Nephrol",
+   "issn": "1555-9041",
+   "if": 8.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "肾脏"
+  },
+  {
+   "name": "Nephrology Dialysis Transplantation",
+   "abbrev": "Nephrol Dial Transplant",
+   "issn": "0931-0509",
+   "if": 4.8,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "肾脏"
+  },
+  {
+   "name": "Annals of the Rheumatic Diseases",
+   "abbrev": "Ann Rheum Dis",
+   "issn": "0003-4967",
+   "if": 20.3,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "风湿免疫"
+  },
+  {
+   "name": "Arthritis & Rheumatology",
+   "abbrev": "Arthritis Rheumatol",
+   "issn": "2326-5191",
+   "if": 10.9,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "风湿免疫"
+  },
+  {
+   "name": "Rheumatology",
+   "abbrev": "Rheumatology",
+   "issn": "1462-0324",
+   "if": 4.8,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "风湿免疫"
+  },
+  {
+   "name": "Lupus",
+   "abbrev": "Lupus",
+   "issn": "0961-2033",
+   "if": 2.7,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "风湿免疫"
+  },
+  {
+   "name": "Clinical Infectious Diseases",
+   "abbrev": "Clin Infect Dis",
+   "issn": "1058-4838",
+   "if": 8.5,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "感染"
+  },
+  {
+   "name": "Journal of Infectious Diseases",
+   "abbrev": "J Infect Dis",
+   "issn": "0022-1899",
+   "if": 4.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "感染"
+  },
+  {
+   "name": "Lancet Infectious Diseases",
+   "abbrev": "Lancet Infect Dis",
+   "issn": "1473-3099",
+   "if": 31.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "感染"
+  },
+  {
+   "name": "Emerging Infectious Diseases",
+   "abbrev": "Emerg Infect Dis",
+   "issn": "1080-6040",
+   "if": 8.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "感染"
+  },
+  {
+   "name": "BMC Infectious Diseases",
+   "abbrev": "BMC Infect Dis",
+   "issn": "1471-2334",
+   "if": 3.5,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "感染"
+  },
+  {
+   "name": "Blood",
+   "abbrev": "Blood",
+   "issn": "0006-4971",
+   "if": 21.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "血液"
+  },
+  {
+   "name": "Leukemia",
+   "abbrev": "Leukemia",
+   "issn": "0887-6924",
+   "if": 12.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "血液"
+  },
+  {
+   "name": "Haematologica",
+   "abbrev": "Haematologica",
+   "issn": "0390-6078",
+   "if": 9.4,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "血液"
+  },
+  {
+   "name": "American Journal of Hematology",
+   "abbrev": "Am J Hematol",
+   "issn": "0361-8609",
+   "if": 10.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "血液"
+  },
+  {
+   "name": "British Journal of Haematology",
+   "abbrev": "Br J Haematol",
+   "issn": "0007-1048",
+   "if": 5.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "血液"
+  },
+  {
+   "name": "JAMA Psychiatry",
+   "abbrev": "JAMA Psychiatry",
+   "issn": "2168-622X",
+   "if": 22.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "精神心理"
+  },
+  {
+   "name": "American Journal of Psychiatry",
+   "abbrev": "Am J Psychiatry",
+   "issn": "0002-953X",
+   "if": 13.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "精神心理"
+  },
+  {
+   "name": "Molecular Psychiatry",
+   "abbrev": "Mol Psychiatry",
+   "issn": "1359-4184",
+   "if": 10.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "精神心理"
+  },
+  {
+   "name": "Biological Psychiatry",
+   "abbrev": "Biol Psychiatry",
+   "issn": "0006-3223",
+   "if": 9.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "精神心理"
+  },
+  {
+   "name": "Psychological Medicine",
+   "abbrev": "Psychol Med",
+   "issn": "0033-2917",
+   "if": 5.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "精神心理"
+  },
+  {
+   "name": "Obstetrics & Gynecology",
+   "abbrev": "Obstet Gynecol",
+   "issn": "0029-7844",
+   "if": 5.7,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "妇产"
+  },
+  {
+   "name": "American Journal of Obstetrics and Gynecology",
+   "abbrev": "Am J Obstet Gynecol",
+   "issn": "0002-9378",
+   "if": 8.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "妇产"
+  },
+  {
+   "name": "BJOG",
+   "abbrev": "BJOG",
+   "issn": "1470-0328",
+   "if": 5.0,
+   "cas": 2,
+   "q": "Q2",
+   "cat": "妇产"
+  },
+  {
+   "name": "Human Reproduction Update",
+   "abbrev": "Hum Reprod Update",
+   "issn": "1355-4786",
+   "if": 14.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "妇产"
+  },
+  {
+   "name": "Fertility and Sterility",
+   "abbrev": "Fertil Steril",
+   "issn": "0015-0282",
+   "if": 4.8,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "妇产"
+  },
+  {
+   "name": "JAMA Pediatrics",
+   "abbrev": "JAMA Pediatr",
+   "issn": "2168-6203",
+   "if": 24.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "儿科"
+  },
+  {
+   "name": "Pediatrics",
+   "abbrev": "Pediatrics",
+   "issn": "0031-4005",
+   "if": 7.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "儿科"
+  },
+  {
+   "name": "Journal of Pediatrics",
+   "abbrev": "J Pediatr",
+   "issn": "0022-3476",
+   "if": 3.7,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "儿科"
+  },
+  {
+   "name": "Archives of Disease in Childhood",
+   "abbrev": "Arch Dis Child",
+   "issn": "0003-9888",
+   "if": 4.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "儿科"
+  },
+  {
+   "name": "Pediatric Research",
+   "abbrev": "Pediatr Res",
+   "issn": "0031-3998",
+   "if": 3.0,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "儿科"
+  },
+  {
+   "name": "Ophthalmology",
+   "abbrev": "Ophthalmology",
+   "issn": "0161-6420",
+   "if": 6.1,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "眼科"
+  },
+  {
+   "name": "JAMA Ophthalmology",
+   "abbrev": "JAMA Ophthalmol",
+   "issn": "2168-6165",
+   "if": 8.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "眼科"
+  },
+  {
+   "name": "American Journal of Ophthalmology",
+   "abbrev": "Am J Ophthalmol",
+   "issn": "0002-9394",
+   "if": 5.2,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "眼科"
+  },
+  {
+   "name": "Investigative Ophthalmology & Visual Science",
+   "abbrev": "Invest Ophthalmol Vis Sci",
+   "issn": "0146-0404",
+   "if": 5.0,
+   "cas": 2,
+   "q": "Q2",
+   "cat": "眼科"
+  },
+  {
+   "name": "Retina",
+   "abbrev": "Retina",
+   "issn": "0275-004X",
+   "if": 4.6,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "眼科"
+  },
+  {
+   "name": "British Journal of Ophthalmology",
+   "abbrev": "Br J Ophthalmol",
+   "issn": "0007-1161",
+   "if": 4.5,
+   "cas": 2,
+   "q": "Q2",
+   "cat": "眼科"
+  },
+  {
+   "name": "Progress in Retinal and Eye Research",
+   "abbrev": "Prog Retin Eye Res",
+   "issn": "1350-9462",
+   "if": 13.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "眼科"
+  },
+  {
+   "name": "Eye",
+   "abbrev": "Eye",
+   "issn": "0950-222X",
+   "if": 3.0,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "眼科"
+  },
+  {
+   "name": "Laryngoscope",
+   "abbrev": "Laryngoscope",
+   "issn": "0023-852X",
+   "if": 2.8,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "耳鼻喉/口腔"
+  },
+  {
+   "name": "Journal of Dental Research",
+   "abbrev": "J Dent Res",
+   "issn": "0022-0345",
+   "if": 6.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "耳鼻喉/口腔"
+  },
+  {
+   "name": "Oral Oncology",
+   "abbrev": "Oral Oncol",
+   "issn": "1368-8375",
+   "if": 4.2,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "耳鼻喉/口腔"
+  },
+  {
+   "name": "Journal of Investigative Dermatology",
+   "abbrev": "J Invest Dermatol",
+   "issn": "0022-202X",
+   "if": 5.7,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "皮肤"
+  },
+  {
+   "name": "British Journal of Dermatology",
+   "abbrev": "Br J Dermatol",
+   "issn": "0007-0963",
+   "if": 10.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "皮肤"
+  },
+  {
+   "name": "JAMA Dermatology",
+   "abbrev": "JAMA Dermatol",
+   "issn": "2168-6068",
+   "if": 10.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "皮肤"
+  },
+  {
+   "name": "Annals of Surgery",
+   "abbrev": "Ann Surg",
+   "issn": "0003-4932",
+   "if": 9.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "外科"
+  },
+  {
+   "name": "British Journal of Surgery",
+   "abbrev": "Br J Surg",
+   "issn": "0007-1323",
+   "if": 8.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "外科"
+  },
+  {
+   "name": "JAMA Surgery",
+   "abbrev": "JAMA Surg",
+   "issn": "2168-6254",
+   "if": 14.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "外科"
+  },
+  {
+   "name": "Journal of Vascular Surgery",
+   "abbrev": "J Vasc Surg",
+   "issn": "0741-5214",
+   "if": 4.3,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "外科"
+  },
+  {
+   "name": "Critical Care Medicine",
+   "abbrev": "Crit Care Med",
+   "issn": "0090-3493",
+   "if": 7.4,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "麻醉重症"
+  },
+  {
+   "name": "Intensive Care Medicine",
+   "abbrev": "Intensive Care Med",
+   "issn": "0342-4642",
+   "if": 17.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "麻醉重症"
+  },
+  {
+   "name": "Anesthesiology",
+   "abbrev": "Anesthesiology",
+   "issn": "0003-3022",
+   "if": 8.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "麻醉重症"
+  },
+  {
+   "name": "Critical Care",
+   "abbrev": "Crit Care",
+   "issn": "1364-8535",
+   "if": 8.8,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "麻醉重症"
+  },
+  {
+   "name": "Annals of Emergency Medicine",
+   "abbrev": "Ann Emerg Med",
+   "issn": "0196-0644",
+   "if": 5.2,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "急诊全科"
+  },
+  {
+   "name": "Academic Emergency Medicine",
+   "abbrev": "Acad Emerg Med",
+   "issn": "1069-6563",
+   "if": 3.4,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "急诊全科"
+  },
+  {
+   "name": "British Journal of General Practice",
+   "abbrev": "Br J Gen Pract",
+   "issn": "0960-1643",
+   "if": 4.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "急诊全科"
+  },
+  {
+   "name": "Family Practice",
+   "abbrev": "Fam Pract",
+   "issn": "0263-2136",
+   "if": 2.4,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "急诊全科"
+  },
+  {
+   "name": "Radiology",
+   "abbrev": "Radiology",
+   "issn": "0033-8419",
+   "if": 15.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "影像"
+  },
+  {
+   "name": "European Radiology",
+   "abbrev": "Eur Radiol",
+   "issn": "0938-7994",
+   "if": 6.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "影像"
+  },
+  {
+   "name": "American Journal of Roentgenology",
+   "abbrev": "AJR Am J Roentgenol",
+   "issn": "0361-803X",
+   "if": 4.7,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "影像"
+  },
+  {
+   "name": "Journal of Magnetic Resonance Imaging",
+   "abbrev": "J Magn Reson Imaging",
+   "issn": "1053-1807",
+   "if": 4.3,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "影像"
+  },
+  {
+   "name": "American Journal of Surgical Pathology",
+   "abbrev": "Am J Surg Pathol",
+   "issn": "0147-5185",
+   "if": 4.4,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "病理"
+  },
+  {
+   "name": "Modern Pathology",
+   "abbrev": "Mod Pathol",
+   "issn": "0893-3952",
+   "if": 6.5,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "病理"
+  },
+  {
+   "name": "Histopathology",
+   "abbrev": "Histopathology",
+   "issn": "0309-0167",
+   "if": 4.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "病理"
+  },
+  {
+   "name": "Journal of Pathology",
+   "abbrev": "J Pathol",
+   "issn": "0022-3417",
+   "if": 6.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "病理"
+  },
+  {
+   "name": "Journal of Allergy and Clinical Immunology",
+   "abbrev": "J Allergy Clin Immunol",
+   "issn": "0091-6749",
+   "if": 14.2,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "免疫过敏"
+  },
+  {
+   "name": "Allergy",
+   "abbrev": "Allergy",
+   "issn": "0105-4538",
+   "if": 12.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "免疫过敏"
+  },
+  {
+   "name": "Clinical & Experimental Allergy",
+   "abbrev": "Clin Exp Allergy",
+   "issn": "0954-7894",
+   "if": 4.2,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "免疫过敏"
+  },
+  {
+   "name": "Nature Genetics",
+   "abbrev": "Nat Genet",
+   "issn": "1061-4036",
+   "if": 28.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "遗传基因组"
+  },
+  {
+   "name": "American Journal of Human Genetics",
+   "abbrev": "Am J Hum Genet",
+   "issn": "0002-9297",
+   "if": 9.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "遗传基因组"
+  },
+  {
+   "name": "Human Molecular Genetics",
+   "abbrev": "Hum Mol Genet",
+   "issn": "0964-6906",
+   "if": 4.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "遗传基因组"
+  },
+  {
+   "name": "Genome Medicine",
+   "abbrev": "Genome Med",
+   "issn": "1741-7008",
+   "if": 11.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "遗传基因组"
+  },
+  {
+   "name": "Journal of Clinical Investigation",
+   "abbrev": "J Clin Invest",
+   "issn": "0021-9738",
+   "if": 15.9,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "基础医学"
+  },
+  {
+   "name": "Journal of Experimental Medicine",
+   "abbrev": "J Exp Med",
+   "issn": "0022-1007",
+   "if": 12.6,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "基础医学"
+  },
+  {
+   "name": "EMBO Journal",
+   "abbrev": "EMBO J",
+   "issn": "0261-4189",
+   "if": 10.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "基础医学"
+  },
+  {
+   "name": "FASEB Journal",
+   "abbrev": "FASEB J",
+   "issn": "0892-6638",
+   "if": 4.8,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "基础医学"
+  },
+  {
+   "name": "Cell",
+   "abbrev": "Cell",
+   "issn": "0092-8674",
+   "if": 64.5,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "细胞发育"
+  },
+  {
+   "name": "Nature Cell Biology",
+   "abbrev": "Nat Cell Biol",
+   "issn": "1465-7392",
+   "if": 21.3,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "细胞发育"
+  },
+  {
+   "name": "Cell Research",
+   "abbrev": "Cell Res",
+   "issn": "1001-0602",
+   "if": 25.9,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "细胞发育"
+  },
+  {
+   "name": "Developmental Cell",
+   "abbrev": "Dev Cell",
+   "issn": "1534-5807",
+   "if": 10.7,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "细胞发育"
+  },
+  {
+   "name": "Pharmacological Reviews",
+   "abbrev": "Pharmacol Rev",
+   "issn": "0031-6997",
+   "if": 19.3,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "药理"
+  },
+  {
+   "name": "British Journal of Pharmacology",
+   "abbrev": "Br J Pharmacol",
+   "issn": "0007-1188",
+   "if": 5.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "药理"
+  },
+  {
+   "name": "Clinical Pharmacology & Therapeutics",
+   "abbrev": "Clin Pharmacol Ther",
+   "issn": "0009-9236",
+   "if": 6.3,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "药理"
+  },
+  {
+   "name": "Trials",
+   "abbrev": "Trials",
+   "issn": "1745-6215",
+   "if": 2.7,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "方法学"
+  },
+  {
+   "name": "BMJ Open",
+   "abbrev": "BMJ Open",
+   "issn": "2044-6055",
+   "if": 2.6,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "方法学"
+  },
+  {
+   "name": "Scientific Reports",
+   "abbrev": "Sci Rep",
+   "issn": "2045-2322",
+   "if": 4.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "方法学"
+  },
+  {
+   "name": "Nature Communications",
+   "abbrev": "Nat Commun",
+   "issn": "2041-1723",
+   "if": 14.7,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "方法学"
+  },
+  {
+   "name": "Proceedings of the National Academy of Sciences of the United States of America",
+   "abbrev": "Proc Natl Acad Sci U S A",
+   "issn": "0027-8424",
+   "if": 9.4,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "方法学"
+  },
+  {
+   "name": "eLife",
+   "abbrev": "eLife",
+   "issn": "2050-084X",
+   "if": 7.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "方法学"
+  },
+  {
+   "name": "Journal of Clinical Epidemiology",
+   "abbrev": "J Clin Epidemiol",
+   "issn": "0895-4356",
+   "if": 5.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "方法学"
+  },
+  {
+   "name": "Systematic Reviews",
+   "abbrev": "Syst Rev",
+   "issn": "2046-4053",
+   "if": 7.5,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "方法学"
+  },
+  {
+   "name": "PLoS ONE",
+   "abbrev": "PLoS One",
+   "issn": "1932-6203",
+   "if": 3.7,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "方法学"
+  },
+  {
+   "name": "npj Digital Medicine",
+   "abbrev": "npj Digit Med",
+   "issn": "2398-6352",
+   "if": 15.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "医学信息"
+  },
+  {
+   "name": "Journal of Medical Internet Research",
+   "abbrev": "J Med Internet Res",
+   "issn": "1438-8871",
+   "if": 7.4,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "医学信息"
+  },
+  {
+   "name": "Journal of Biomedical Informatics",
+   "abbrev": "J Biomed Inform",
+   "issn": "1532-0464",
+   "if": 3.5,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "医学信息"
+  },
+  {
+   "name": "International Journal of Medical Informatics",
+   "abbrev": "Int J Med Inform",
+   "issn": "1386-5056",
+   "if": 3.7,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "医学信息"
+  },
+  {
+   "name": "BMC Medical Informatics and Decision Making",
+   "abbrev": "BMC Med Inform Decis Mak",
+   "issn": "1472-6947",
+   "if": 3.5,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "医学信息"
+  },
+  {
+   "name": "International Journal of Nursing Studies",
+   "abbrev": "Int J Nurs Stud",
+   "issn": "0020-7489",
+   "if": 6.5,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "护理"
+  },
+  {
+   "name": "Journal of Advanced Nursing",
+   "abbrev": "J Adv Nurs",
+   "issn": "0309-2402",
+   "if": 3.8,
+   "cas": 4,
+   "q": "Q2",
+   "cat": "护理"
+  },
+  {
+   "name": "Nurse Education Today",
+   "abbrev": "Nurse Educ Today",
+   "issn": "0260-6917",
+   "if": 4.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "护理"
+  },
+  {
+   "name": "British Journal of Sports Medicine",
+   "abbrev": "Br J Sports Med",
+   "issn": "0306-3674",
+   "if": 12.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "运动康复"
+  },
+  {
+   "name": "Journal of Physiotherapy",
+   "abbrev": "J Physiother",
+   "issn": "1836-9553",
+   "if": 3.8,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "运动康复"
+  },
+  {
+   "name": "Scandinavian Journal of Medicine & Science in Sports",
+   "abbrev": "Scand J Med Sci Sports",
+   "issn": "0905-7188",
+   "if": 4.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "运动康复"
+  },
+  {
+   "name": "American Journal of Clinical Nutrition",
+   "abbrev": "Am J Clin Nutr",
+   "issn": "0002-9165",
+   "if": 7.0,
+   "cas": 1,
+   "q": "Q1",
+   "cat": "营养"
+  },
+  {
+   "name": "Nutrients",
+   "abbrev": "Nutrients",
+   "issn": "2072-6643",
+   "if": 5.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "营养"
+  },
+  {
+   "name": "Journal of Nutrition",
+   "abbrev": "J Nutr",
+   "issn": "0022-3166",
+   "if": 4.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "营养"
+  },
+  {
+   "name": "Age and Ageing",
+   "abbrev": "Age Ageing",
+   "issn": "0002-0729",
+   "if": 9.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "老年"
+  },
+  {
+   "name": "Journals of Gerontology Series A: Biological Sciences and Medical Sciences",
+   "abbrev": "J Gerontol A Biol Sci Med Sci",
+   "issn": "1079-5006",
+   "if": 4.5,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "老年"
+  },
+  {
+   "name": "Pain",
+   "abbrev": "Pain",
+   "issn": "0304-3959",
+   "if": 6.0,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "疼痛"
+  },
+  {
+   "name": "Regional Anesthesia and Pain Medicine",
+   "abbrev": "Reg Anesth Pain Med",
+   "issn": "1098-7339",
+   "if": 5.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "疼痛"
+  },
+  {
+   "name": "Journal of Pain and Symptom Management",
+   "abbrev": "J Pain Symptom Manage",
+   "issn": "0885-3924",
+   "if": 4.0,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "姑息/伦理"
+  },
+  {
+   "name": "BMC Medical Ethics",
+   "abbrev": "BMC Med Ethics",
+   "issn": "1472-6939",
+   "if": 2.5,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "姑息/伦理"
+  },
+  {
+   "name": "Chinese Journal of Integrative Medicine",
+   "abbrev": "Chin J Integr Med",
+   "issn": "1672-0415",
+   "if": 2.2,
+   "cas": 4,
+   "q": "Q4",
+   "cat": "中医药"
+  },
+  {
+   "name": "Phytomedicine",
+   "abbrev": "Phytomedicine",
+   "issn": "0944-7113",
+   "if": 6.7,
+   "cas": 2,
+   "q": "Q1",
+   "cat": "中医药"
+  },
+  {
+   "name": "Chinese Medical Journal",
+   "abbrev": "Chin Med J (Engl)",
+   "issn": "0366-6999",
+   "if": 3.2,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "中国期刊"
+  },
+  {
+   "name": "World Journal of Pediatrics",
+   "abbrev": "World J Pediatr",
+   "issn": "1867-0687",
+   "if": 4.2,
+   "cas": 3,
+   "q": "Q2",
+   "cat": "中国期刊"
+  },
+  {
+   "name": "Journal of Geriatric Cardiology",
+   "abbrev": "J Geriatr Cardiol",
+   "issn": "1671-5411",
+   "if": 2.8,
+   "cas": 4,
+   "q": "Q3",
+   "cat": "中国期刊"
+  }
+ ]
+}

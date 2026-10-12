@@ -1,0 +1,20 @@
+# 密钥与本地配置
+config.local.py
+
+# 缓存与日志
+cache/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# 系统
+.DS_Store
+Thumbs.db

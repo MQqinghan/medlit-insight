@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文献罗盘 · PubMed 文献洞察</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <script src="/static/vendor/vue.global.prod.js"></script>
+  <script src="/static/vendor/echarts.min.js"></script>
+  <script src="/static/vendor/echarts-wordcloud.min.js"></script>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">文</span>
+        <div>
+          <h1>文献罗盘 · PubMed 文献洞察</h1>
+          <p class="sub">关键词 → 检索 → 统计 · 词云 · 影响力 Top{{ topN }} · AI 中文综述</p>
+        </div>
+      </div>
+      <span class="ver">v0.1 · 笔试演示</span>
+    </header>
+
+    <main class="container">
+      <!-- 搜索区 -->
+      <section class="card search-card">
+        <div class="search-row">
+          <input v-model="keyword" @keyup.enter="start" placeholder="输入关键词，如：糖尿病视网膜病变 / CAR-T / diabetic retinopathy" :disabled="loading" />
+          <select v-model.number="years" :disabled="loading" title="近N年窗口">
+            <option :value="3">近3年</option>
+            <option :value="5">近5年</option>
+            <option :value="10">近10年</option>
+          </select>
+          <button class="primary" @click="start" :disabled="loading">{{ loading ? '检索中…' : '检索' }}</button>
+        </div>
+        <div class="search-meta">
+          <span class="ex" v-for="e in examples" :key="e" @click="useExample(e)">{{ e }}</span>
+          <label class="force"><input type="checkbox" v-model="force" :disabled="loading" /> 忽略缓存重新检索</label>
+        </div>
+        <div v-if="loading" class="progress-wrap">
+          <div class="progress-bar"><div class="progress-inner" :style="{ width: progressPct + '%' }"></div></div>
+          <p class="progress-text">{{ stageText }}（{{ Math.round(progressPct) }}%）</p>
+        </div>
+        <div v-if="errorMsg" class="alert">{{ errorMsg }}</div>
+      </section>
+
+      <!-- 结果区 -->
+      <template v-if="result">
+        <p class="result-meta">
+          关键词「{{ result.keyword }}」· 近{{ result.params.years }}年（{{ result.params.start_year }}–{{ result.params.end_year }}）
+          · 耗时 {{ (result.meta.elapsed_ms / 1000).toFixed(1) }}s
+          <span v-if="result.meta.cache_hit" class="badge">缓存命中</span>
+          <span v-if="result.review.source === 'fallback'" class="badge warn">LLM 不可用 · 模板兜底</span>
+        </p>
+
+        <!-- KPI -->
+        <section class="kpi-grid">
+          <div class="kpi"><p class="k-label">检索总量</p><p class="k-value">{{ fmt(result.stats.total_count) }}</p></div>
+          <div class="kpi"><p class="k-label">近{{ result.params.years }}年</p><p class="k-value">{{ fmt(result.stats.recent_count) }}</p></div>
+          <div class="kpi"><p class="k-label">纳入分析</p><p class="k-value">{{ fmt(result.stats.analyzed_count) }}</p></div>
+          <div class="kpi"><p class="k-label">1区占比</p><p class="k-value">{{ pct(result.stats.q1_ratio) }}</p></div>
+          <div class="kpi"><p class="k-label">中位 IF</p><p class="k-value">{{ result.stats.median_if ?? '—' }}</p></div>
+        </section>
+
+        <!-- 图表行 1 -->
+        <section class="grid-2">
+          <div class="card">
+            <h2>研究热点词云 <span class="hint">MeSH 词频 + 标题实词</span></h2>
+            <div ref="wcChart" class="chart chart-wordcloud"></div>
+          </div>
+          <div class="card">
+            <h2>年度发文趋势 <span class="hint">逐年精确计数 · 近10年</span></h2>
+            <div ref="trendChart" class="chart"></div>
+          </div>
+        </section>
+
+        <!-- 图表行 2 -->
+        <section class="grid-2">
+          <div class="card">
+            <h2>高产期刊 Top10 <span class="hint">条长 = 样本篇数</span></h2>
+            <div ref="journalChart" class="chart"></div>
+          </div>
+          <div class="card">
+            <h2>分区分布 <span class="hint">中科院大类 · 样本内</span></h2>
+            <div class="zone-flex">
+              <div ref="zoneChart" class="chart chart-donut"></div>
+              <ul class="zone-legend">
+                <li v-for="z in zoneItems" :key="z.label"><i :style="{ background: z.color }"></i>{{ z.label }}：{{ fmt(z.value) }} 篇（{{ pct(z.value / Math.max(result.stats.analyzed_count, 1)) }}）</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Top N 表 -->
+        <section class="card">
+          <div class="card-head">
+            <h2>近{{ result.params.years }}年影响力 Top{{ result.stats.top_n.length }} <span class="hint">按影响因子降序 · 样本 {{ fmt(result.stats.analyzed_count) }} 篇 · 指标匹配率 {{ pct(result.stats.matched_ratio) }}</span></h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th class="c-rank">#</th><th>标题</th><th class="c-j">期刊</th><th class="c-y">年份</th><th class="c-if">IF</th><th class="c-z">分区</th></tr>
+              </thead>
+              <tbody>
+                <tr v-for="a in result.stats.top_n" :key="a.rank">
+                  <td class="c-rank">{{ a.rank }}</td>
+                  <td class="c-title" :title="a.title">{{ a.title }}</td>
+                  <td class="c-j" :title="a.journal">{{ a.journal }}</td>
+                  <td class="c-y">{{ a.year }}</td>
+                  <td class="c-if">{{ a.if }}</td>
+                  <td class="c-z"><span class="zone-tag" :class="'z' + (a.zone || 'x')">{{ a.zone ? a.zone + '区' : '—' }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 综述报告 -->
+        <section class="card report-card">
+          <div class="card-head">
+            <h2>AI 中文综述 <span class="hint">约500字 · 分点呈现</span></h2>
+            <div class="btn-group">
+              <button @click="exportMd">导出 Markdown</button>
+              <button @click="exportDocx">导出 Word</button>
+              <button @click="printReport">导出 PDF（打印）</button>
+            </div>
+          </div>
+          <div class="review-body">
+            <p v-for="(para, i) in reviewParas" :key="i">{{ para }}</p>
+          </div>
+        </section>
+
+        <footer class="disclaimer">
+          数据来源：PubMed E-utilities ｜ 期刊 IF / 分区为本地静态示例库（{{ result.meta.journal_db_version }}），非实时权威口径 ｜
+          综述由 LLM 基于检索摘要生成，仅供参考 ｜ 样本说明：分区与期刊统计基于近{{ result.params.years }}年前 {{ fmt(result.stats.analyzed_count) }} 篇（按相关度），年度趋势为逐年精确计数。
+        </footer>
+      </template>
+
+      <!-- 空状态 -->
+      <section v-else-if="!loading" class="empty">
+        <h2>输入一个研究方向，30 秒看清这个领域</h2>
+        <div class="feat-grid">
+          <div class="feat"><h3>领域统计</h3><p>检索总量、近5年走势、期刊与分区格局、中位影响因子</p></div>
+          <div class="feat"><h3>热点词云</h3><p>MeSH 主题词词频云图，快速定位研究方向</p></div>
+          <div class="feat"><h3>影响力榜单</h3><p>近5年按影响因子排序的 Top{{ topN }} 文献</p></div>
+          <div class="feat"><h3>AI 综述</h3><p>基于入选文献摘要生成约500字中文分点综述，可导出</p></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 打印专用完整报告（屏幕隐藏，打印时独占页面） -->
+    <div id="print-report" v-html="printHtml"></div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
