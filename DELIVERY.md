@@ -16,10 +16,13 @@
 
 - **截图 A（检索结果页）**：浏览器打开 <https://pubmed.ncbi.nlm.nih.gov/?term=diabetic+retinopathy>
   （⚠️ 必须用英文关键词——PubMed API 对中文查询不做术语映射，直搜中文结果为 0），
-  截取完整结果页——画面里能看到**结果总数**（如 "53,177 results"）和文献列表，
-  与 demo 首页"检索总量"数字互相印证。
-- **截图 B（单篇文献详情页，可选加分项）**：点进榜单第一文献（Journal of Clinical Investigation，
-  IF 15.9），展示其 PubMed 原文页面，证明 demo 中的标题/期刊/年份与 PubMed 一致。
+  截取完整结果页——画面里能看到**结果总数**（PubMed 实时收录，数字每天微涨属正常，
+  与 demo 首页"检索总量"同一量级、互相印证）和文献列表。
+- **截图 B（单篇文献详情页，可选加分项）**：点进榜单第一文献
+  <https://pubmed.ncbi.nlm.nih.gov/42253244/>（*Neovascularization of the Disk in Proliferative
+  Diabetic Retinopathy*，The New England Journal of Medicine，2026，即 demo Top100 榜首
+  IF 96.2 那篇），展示其 PubMed 原文页面，证明 demo 中的标题/期刊/年份与 PubMed 一致。
+  （若 demo 页面榜首与链接标题不符，以 demo 页面榜首标题为准，去 PubMed 首页搜索框粘贴标题搜索后截图。）
 
 ### 2. demo 系统页面截图
 
@@ -34,7 +37,7 @@
 
 ## 三、演示视频（已由 AI 全自动制作完成）
 
-成品：`video/medlit_demo.mp4`（1920x1080，3 分 04 秒，13.3 MB）
+成品：`video/medlit_demo.mp4`（1920x1080，2 分 40 秒，13.6 MB）
 
 **制作方式本身就是"深度使用 AI 工具"的实证**，邮件和面试中可主动讲：
 
