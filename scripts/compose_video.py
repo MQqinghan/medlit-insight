@@ -18,7 +18,8 @@ WORK = VIDEO_DIR / "work"
 WORK.mkdir(parents=True, exist_ok=True)
 
 # 视频分段：(起始 marker, 结束 marker, 速度系数<1 为快进)
-# S2 为真实检索全过程（实测 95-145s 波动），按 4 倍速呈现
+# S1 为真实检索全过程（实测 95-145s 波动），按 4 倍速呈现
+# 片尾卡段已按本人要求砍掉（2026-10-15）：视频以导出动作完成 + END_PAD 定格收尾
 SEGMENTS = [
     ("start", "type_click", 1.0),
     ("search_start", "result_ready", 0.25),
@@ -28,22 +29,21 @@ SEGMENTS = [
     ("journals", "top", 1.0),
     ("top", "review", 1.0),
     ("review", "export", 1.0),
-    ("export", "card_end_start", 1.0),
-    ("card_end_start", "end", 1.0),
+    # export_end=277.4s：card_end_start 晚于画面实际切换（278.0s 已是片尾卡），用逐帧定位的截断点。
+    # 1.566 慢放：3.99s 画面 → 6.25s，替代 tpad 定格（tpad 在本 filter graph 中静默失效，见 NOTES）
+    ("export", "export_end", 1.566),
 ]
 
 # 配音放置：sid -> (所在段下标, 段内偏移秒)；None 表示绝对偏移
 VOICE_PLAN = {
     "00_intro": (None, 1.0),
     "01_search": (0, -5.5),    # S1 结束前 5.5s（覆盖打字+点击）
-    "02_kpi": (3, 1.5),        # S4 起点 +1.5s
+    "02_kpi": (3, 0.5),        # S4 起点 +0.5s（配音 25.6s，段长 26s，收紧偏移防叠音）
     "03_cloud": (4, 1.0),      # S5 起点 +1.0s（词云+期刊共 22s，配音 19.5s）
     "04_top": (6, 1.5),        # S7 起点 +1.5s
     "05_review": (7, 1.5),     # S8 起点 +1.5s
-    "06_outro": (9, 0.8),      # S10 起点 +0.8s
+    "06_outro": (8, 0.2),      # S9（导出画面慢放）起点 +0.2s，画音同步
 }
-
-END_PAD = 1.5  # 片尾卡延长秒数（给收尾配音留空间）
 
 
 def ffmpeg():
@@ -69,15 +69,12 @@ def main():
     print(f"源录像: {src.name}  (markers 总时长 {markers['total_ms']/1000:.1f}s)")
 
     # 1) 单次解码 + trim 滤镜切段变速（playwright webm 时间戳不连续，-ss seek 不可靠）
-    seg_files = []
     tl = []
     pos = 0.0
     trims = []
     for i, (a, b, speed) in enumerate(SEGMENTS):
         t_a, t_b = markers[a] / 1000.0, markers[b] / 1000.0
         dur = (t_b - t_a) * speed
-        if i == len(SEGMENTS) - 1:
-            dur += END_PAD  # 片尾卡补时
         # trim 后重置时间戳；变速段乘速度系数
         pst = "PTS-STARTPTS" if speed == 1.0 else f"(PTS-STARTPTS)*{speed}"
         trims.append(f"[0:v]trim=start={t_a:.3f}:end={t_b:.3f},setpts={pst}[s{i}]")
@@ -86,11 +83,7 @@ def main():
     total = pos
     fc_trim = ";".join(trims)
     labels = "".join(f"[s{i}]" for i in range(len(SEGMENTS)))
-    # 片尾段（最后一个）之后补静止帧
-    pad_idx = len(SEGMENTS) - 1
-    fc_all = fc_trim + f";[s{pad_idx}]tpad=stop_mode=clone:stop_duration={END_PAD}[s{pad_idx}p]" \
-        + f";{labels.replace(f'[s{pad_idx}]', f'[s{pad_idx}p]')}" \
-        + f"concat=n={len(SEGMENTS)}:v=1:a=0[vout]"
+    fc_all = fc_trim + f";{labels}concat=n={len(SEGMENTS)}:v=1:a=0[vout]"
     video_only = WORK / "video_only.mp4"
     run([exe, "-y", "-i", str(src), "-filter_complex", fc_all, "-map", "[vout]",
          "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",

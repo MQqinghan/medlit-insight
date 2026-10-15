@@ -5,7 +5,7 @@
 | # | 材料 | 状态 | 说明 |
 | --- | --- | --- | --- |
 | 1 | GitHub 仓库链接 | 待推送 | 代码 + README + NOTES（AI 协作实录） |
-| 2 | 演示视频（3 分钟） | ✅ 已完成 | `video/medlit_demo.mp4`（1080p，AI 全自动制作，见第三节） |
+| 2 | 演示视频（2 分 48 秒） | ✅ 已完成 | `video/medlit_demo.mp4`（1080p，AI 全自动制作，见第三节） |
 | 3 | PubMed 数据来源截图 | 本人截取 | 位置见下方第二节 |
 | 4 | demo 系统页面截图 | 本人截取 | 方法见下方第二节 |
 | 5 | 邮件正文 | 模板见下方第四节 | 附上述材料链接/附件 |
@@ -42,11 +42,11 @@
 | --- | --- | --- |
 | 分镜配音（中文，Cherry 音色） | 通义千问 qwen3-tts-flash | `scripts/make_voice.py` |
 | 浏览器自动操作 + 录屏（1080p） | Playwright 驱动 Edge | `scripts/record_demo.py` |
-| 剪辑（进度段 4 倍速）+ 音画对位合成 | ffmpeg（trim/adelay/tpad） | `scripts/compose_video.py` |
+| 剪辑（进度段 4 倍速、导出段慢放收尾）+ 音画对位合成 | ffmpeg（trim/setpts/adelay） | `scripts/compose_video.py` |
 
-视频结构（对应 DELIVERY 原脚本，配音由 TTS 生成，片尾已诚实标注制作方式）：
+视频结构（对应 DELIVERY 原脚本，配音由 TTS 生成）：
 片头定位 → 输入检索（真实进度流，4 倍速）→ KPI/趋势 → 词云/期刊格局 → Top100 与数据口径 →
-AI 综述（qwen3.7-flash，含兜底说明）→ 导出演示 → 片尾（AI 协证据实）。
+AI 综述（qwen3.7-flash，含兜底说明）→ 导出演示（慢放收尾，无片尾卡）。
 
 > 若需重制或改文案：改 `make_voice.py` 里的 SEGMENTS → 跑三个脚本即可（详见 NOTES.md 第六节）。
 
@@ -59,7 +59,7 @@ AI 综述（qwen3.7-flash，含兜底说明）→ 导出演示 → 片尾（AI �
 > 附件/链接为笔试 demo「文献罗盘」的全部材料：
 >
 > 1. GitHub 仓库：<链接>（含 README、AI 协作实录 NOTES.md、端到端冒烟测试脚本）
-> 2. 演示视频：见附件 `medlit_demo.mp4`（3 分钟，含完整链路与设计思路讲解；
+> 2. 演示视频：见附件 `medlit_demo.mp4`（2 分 48 秒，含完整链路与设计思路讲解；
 >    视频由 Playwright 自动操作录制、通义千问 TTS 配音，全流程 AI 制作）
 > 3. PubMed 数据来源截图：<附件>（与 demo 统计数字互相印证）
 > 4. demo 页面截图：<附件>
