@@ -1,0 +1,8 @@
+# 视频产物不进仓库（保留 scripts/ 与 assets/ 可复现）
+raw/
+work/
+voice/
+*.mp4
+*.webm
+*.wav
+*.jpg

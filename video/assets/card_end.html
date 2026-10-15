@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #f0f6ff 0%, #e8f0fe 50%, #f5f0ff 100%);
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+  }
+  .card { text-align: center; padding: 60px; max-width: 900px; }
+  h1 { font-size: 40px; color: #1e293b; letter-spacing: 1px; margin-bottom: 36px; }
+  .points { text-align: left; display: inline-block; margin-bottom: 40px; }
+  .points li {
+    font-size: 21px; color: #334155; line-height: 2.1; list-style: none;
+    padding-left: 34px; position: relative;
+  }
+  .points li::before {
+    content: "✓"; position: absolute; left: 0; color: #3b82f6; font-weight: 700;
+  }
+  .foot { font-size: 18px; color: #64748b; }
+  .foot b { color: #3b82f6; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>本项目由 AI 编程工具协作完成</h1>
+    <ul class="points">
+      <li>代码由 AI 生成，人工负责需求拆解、架构决策与结果验证</li>
+      <li>七类典型错误（CORS / XML 解析 / 限速 / 幻觉…）的发现与修正全过程记录在案</li>
+      <li>三级兜底设计：PubMed 重试 · LLM 模板兜底 · 磁盘缓存，演示不翻车</li>
+      <li>本视频由 Playwright 自动操作录制，配音由通义千问 TTS 生成</li>
+    </ul>
+    <p class="foot">FastAPI · Vue3 · ECharts · PubMed E-utilities · <b>Qwen</b> · Playwright</p>
+  </div>
+</body>
+</html>

@@ -63,14 +63,23 @@ medlit-insight/
 ├── data/
 │   ├── build_journals.py     # 期刊库生成脚本（加期刊只改这里）
 │   └── journals.json         # 183 个常见医学期刊静态指标库
+├── video/                    # 演示视频（AI 全自动制作，产物已被 gitignore）
+│   ├── assets/               # 片头/片尾卡 HTML
+│   └── medlit_demo.mp4       # 成品（1920x1080，3 分 04 秒）
 └── scripts/
     ├── smoke_test.py         # 端到端冒烟测试（22 项断言）
     ├── check_llm.py          # LLM key 体检：遍历候选端点，输出可用端点+模型清单+真实对话
-    └── check_pubmed_key.py   # PubMed key 体检：实测 esearch 是否被接受
+    ├── check_pubmed_key.py   # PubMed key 体检：实测 esearch 是否被接受
+    ├── make_voice.py         # 视频配音：qwen3-tts-flash 按分镜生成中文配音
+    ├── record_demo.py        # 视频录制：Playwright 驱动 Edge 自动操作 demo 并录屏
+    └── compose_video.py      # 视频合成：按时间轴剪辑 + 音画对位 + ffmpeg 输出 mp4
 ```
 
 > Key 验证提示：不要把 key 直接写进命令行发请求（本沙箱会脱敏命令行中的密钥，造成 401 假象），
 > 一律先填入 `config.local.py`，再用上面两个 check 脚本从配置读取验证。
+>
+> 演示视频制作：`python scripts/make_voice.py && python scripts/record_demo.py && python scripts/compose_video.py`，
+> 详见 NOTES.md 第六节（含 Playwright 录屏、TTS 端点、webm 剪辑的踩坑记录）。
 
 ## 数据口径与免责声明（重要）
 
