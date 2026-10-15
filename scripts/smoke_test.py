@@ -16,7 +16,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 os.environ.setdefault("PYTHONIOENCODING", "utf-8")
-os.environ.setdefault("MAX_FETCH", "600")  # 冒烟加速：只抓 600 篇（3 批），代码路径与默认 2000 一致
+# 与生产同参（默认 MAX_FETCH=2000）：2000 篇 10 批抓取约 30s，测试更真实；
+# analyzed_count 断言为 >100，两种参数均兼容。
 
 import httpx  # noqa: E402
 import uvicorn  # noqa: E402

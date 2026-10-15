@@ -119,7 +119,7 @@
         <!-- 综述报告 -->
         <section class="card report-card">
           <div class="card-head">
-            <h2>AI 中文综述 <span class="hint">约500字 · 分点呈现</span><span class="hint" v-if="result"> · {{ reviewSourceLabel }}</span></h2>
+            <h2>AI 中文综述 <span class="hint" v-if="result">约{{ reviewWordCount }}字 · 分点呈现</span><span class="hint" v-if="result"> · {{ reviewSourceLabel }}</span></h2>
             <div class="btn-group">
               <button @click="exportMd">导出 Markdown</button>
               <button @click="exportDocx">导出 Word</button>

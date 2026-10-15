@@ -46,7 +46,8 @@ def _build_articles_block(top_articles, per_abstract=300, limit=30):
 
 def _validate(text):
     text = (text or "").strip()
-    if not (300 <= len(text) <= 900):
+    # 笔试口径"500字左右"：480-620 不合格即重试一次，防止 LLM 超字（曾实测 623 字被 900 宽校验放行）
+    if not (480 <= len(text) <= 620):
         return False
     hits = sum(1 for h in HEADINGS if h in text)
     return hits >= 3

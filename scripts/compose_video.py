@@ -60,13 +60,29 @@ def run(cmd):
     return p
 
 
+def probe_duration(path):
+    """用 ffmpeg 探测媒体时长（秒）。imageio-ffmpeg 无 ffprobe，解析 -i 的 Duration 行。"""
+    p = subprocess.run([ffmpeg(), "-hide_banner", "-i", str(path)], capture_output=True, text=True)
+    for line in p.stderr.splitlines():
+        if "Duration" in line:
+            ts = line.split("Duration:")[1].split(",")[0].strip()
+            h, m, s = ts.split(":")
+            return int(h) * 3600 + int(m) * 60 + float(s)
+    return 0.0
+
+
 def main():
     exe = ffmpeg()
     markers = json.loads((RAW / "markers.json").read_text(encoding="utf-8"))
     voice = json.loads((VIDEO_DIR / "voice" / "timeline.json").read_text(encoding="utf-8"))
-    # playwright 的 page.goto 会把录像切分成多个文件，只有最大的那个是全程录像
-    src = max(RAW.glob("*.webm"), key=lambda p: p.stat().st_size)
-    print(f"源录像: {src.name}  (markers 总时长 {markers['total_ms']/1000:.1f}s)")
+    # playwright 的 page.goto 会把录像切分成多个文件（26s 导航片段 + 全程录像）。
+    # 三轮踩坑：按字母序取→26s 片段；按 size 最大→旧录像更大；按 mtime 窗口→片段最后 flush 反而更新。
+    # 终极方案：按真实媒体时长取最长者，一次到位。
+    webms = sorted(RAW.glob("*.webm"), key=probe_duration, reverse=True)
+    if not webms:
+        print("ERROR: raw 目录无录像文件"); sys.exit(1)
+    src = webms[0]
+    print(f"源录像: {src.name}  ({markers['total_ms']/1000:.1f}s, 媒体时长 {probe_duration(src):.1f}s)")
 
     # 1) 单次解码 + trim 滤镜切段变速（playwright webm 时间戳不连续，-ss seek 不可靠）
     tl = []

@@ -18,7 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 os.environ.setdefault("PYTHONIOENCODING", "utf-8")
-os.environ.setdefault("MAX_FETCH", "600")  # 与冒烟测试一致：600 篇样本（3 批），全链路约 1 分钟
+# 注意：不再注入 MAX_FETCH=600 压样本——视频必须与正式运行同参（默认 2000），
+# 否则 Top100 只出 75 条，与笔试"影响力前 100"口径冲突（2026-10-15 审片发现）。
 
 import uvicorn  # noqa: E402
 from playwright.sync_api import sync_playwright  # noqa: E402
@@ -80,12 +81,17 @@ def scroll_to(page, js_element_expr):
 
 
 def main():
-    # 0) 清缓存，保证完整链路（演示要展示真实全过程）
+    # 0) 清缓存 + 清旧录像（否则"取最大文件"启发式可能选到上一轮的旧录像）
     cache = ROOT / "cache"
     if cache.exists():
         for f in cache.glob("*.json"):
             f.unlink()
         print("cache cleared")
+    raw_dir = ROOT / "video" / "raw"
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    for f in raw_dir.glob("*.webm"):
+        f.unlink()
+    print("old recordings cleared")
 
     # 1) 进程内起服务（与 smoke_test.py 同模式，沙箱可收尾）
     th = threading.Thread(

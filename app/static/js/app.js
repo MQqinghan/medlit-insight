@@ -40,6 +40,10 @@ createApp({
       if (r.source === "llm") return (r.model || "LLM") + " 生成";
       return "统计模板生成（LLM 不可用）";
     },
+    reviewWordCount() {
+      if (!this.result) return "";
+      return this.result.review.markdown.replace(/\s/g, "").length;
+    },
     zoneItems() {
       if (!this.result) return [];
       const d = this.result.stats.zone_dist;
